@@ -9,11 +9,15 @@
             "instanceId": "shared"
         }
     ],
-    "configurationBuilder": "/configurationBuilder.js",
     "configuration": [
         {
             "name": "apiKey",
             "label": "API Key",
+            "type": "text"
+        },
+        {
+            "name": "network",
+            "label": "Network",
             "type": "text"
         },
         {
@@ -26,7 +30,7 @@
             "name": "INFURA_API_BASE_URL",
             "label": "Infura Api Url",
             "type": "label",
-            "value": "https://api.example.com/v1/ // TODO: Set the base url for the api"
+            "value": "'https://'+ config.network + '.infura.io/v3/' + config.apiKey"
         }
     ],
     "events": [
