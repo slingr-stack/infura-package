@@ -13,12 +13,14 @@
         {
             "name": "apiKey",
             "label": "API Key",
-            "type": "text"
+            "type": "text",
+            "required": "true"
         },
         {
             "name": "network",
             "label": "Network",
-            "type": "text"
+            "type": "text",
+            "required": "true"
         },
         {
             "name": "webhook",
