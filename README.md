@@ -1,4 +1,4 @@
-<table class="table" style="margin-top: 10px">
+<table>
     <thead>
     <tr>
         <th>Title</th>
@@ -8,31 +8,40 @@
     </thead>
     <tbody>
     <tr>
-        <td>Skeleton package</td>
-        <td>November 28, 2023</td>
-        <td>Detailed description of the API of the Skeleton package.</td>
+        <td>Infura package</td>
+        <td>December 28, 2023</td>
+        <td>Detailed description of the API of the Infura package.</td>
     </tr>
     </tbody>
 </table>
 
 # Overview
 
+The Infura endpoint has the following features:
+
+- Authorization and generation of ApiKey tokens
+- Access to the whole REST API
+
+Please make sure you take a look at the documentation from Infura as features are based on its API:
+
+- [API Reference](https://docs.infura.io/networks/ethereum/json-rpc-methods)
+
 # Javascript API
 
-The Javascript API of the skeleton endpoint has two pieces:
+The Javascript API of the infura package has three pieces:
 
 - **HTTP requests**
 - **Flow steps**
 
 ## HTTP requests
-You can make `GET`,`PUT`,`PATCH`,`DELETE` requests to the [skeleton API](API_URL_HERE) like this:
+You can make `GET`,`PUT`,`PATCH`,`DELETE` requests to the [infura API](API_URL_HERE) like this:
 ```javascript
-var response = pkg.skeleton.api.get('/path3')
-var response = pkg.skeleton.api.put('/path1/:testPath', body)
-var response = pkg.skeleton.api.put('/path1/:testPath')
-var response = pkg.skeleton.api.patch('/path2?param2=' + httpOptions.query.param2 + '&param3=' + httpOptions.query.param3 + '', body)
-var response = pkg.skeleton.api.patch('/path2?param2=' + httpOptions.query.param2 + '&param3=' + httpOptions.query.param3 + '')
-var response = pkg.skeleton.api.delete('/path4')
+var response = pkg.infura.api.get('/path3')
+var response = pkg.infura.api.put('/path1/:testPath', body)
+var response = pkg.infura.api.put('/path1/:testPath')
+var response = pkg.infura.api.patch('/path2?param2=' + httpOptions.query.param2 + '&param3=' + httpOptions.query.param3 + '', body)
+var response = pkg.infura.api.patch('/path2?param2=' + httpOptions.query.param2 + '&param3=' + httpOptions.query.param3 + '')
+var response = pkg.infura.api.delete('/path4')
 ```
 
 Please take a look at the documentation of the [HTTP service](https://github.com/slingr-stack/http-service)
@@ -46,9 +55,11 @@ As an alternative option to using scripts, you can make use of Flows and Flow St
 
 <br>
 
+
+
 ### Generic Flow Step
 
-Generic flow step for full use of the entire endpoint and its services.
+Generic flow step for full use of the entire package and its services.
 
 <h3>Inputs</h3>
 
@@ -205,7 +216,6 @@ For more information about how shortcuts or flow steps work, and how they are ge
 
 ## Dependencies
 * HTTP Service (Latest Version)
-* Oauth Package (v1.0.19) // TODO review and remove if its needed
 
 ## About SLINGR
 
@@ -215,4 +225,4 @@ SLINGR is a low-code rapid application development platform that accelerates dev
 
 ## License
 
-This endpoint is licensed under the Apache License 2.0. See the `LICENSE` file for more details.
+This package is licensed under the Apache License 2.0. See the `LICENSE` file for more details.

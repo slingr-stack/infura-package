@@ -1,70 +1,39 @@
 {
-    "name": "skeleton",
-    "label": "Skeleton Package",
+    "name": "infura",
+    "label": "Infura Package",
     "dependencies": [
         {
             "type": "service",
             "name": "http",
             "version": "v1.3.7",
             "instanceId": "shared"
-        },
-        {
-            "type": "package",
-            "name": "oauth",
-            "version": "v1.0.19"
         }
     ],
     "configurationBuilder": "/configurationBuilder.js",
     "configuration": [
         {
-            "name": "SKELETON_API_BASE_URL",
-            "label": "Skeleton Api Url",
+            "name": "apiKey",
+            "label": "API Key",
+            "type": "text"
+        },
+        {
+            "name": "webhook",
+            "label": "Webhook URL",
             "type": "label",
-            "value": "https://example.com/"
+            "value": "config.WEBHOOK_URL"
         },
         {
-            "name": "choice",
-            "label": "Choice",
-            "required": false,
-            "defaultValue": "true",
-            "type": "buttonsGroup",
-            "typeOptions": {
-                "allowCustom": true,
-                "possibleValues": [
-                    {
-                        "label": "True",
-                        "name": "true"
-                    },
-                    {
-                        "label": "False",
-                        "name": "false"
-                    },
-                    {
-                        "label": "Other",
-                        "name": "other"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "text",
-            "label": "Text",
-            "type": "text",
-            "required": "false",
-            "visibility": "config.choice == 'true'"
-        },
-        {
-            "name": "info",
-            "label": "info",
+            "name": "INFURA_API_BASE_URL",
+            "label": "Infura Api Url",
             "type": "label",
-            "value": "'info'"
+            "value": "https://api.example.com/v1/ // TODO: Set the base url for the api"
         }
     ],
     "events": [
         {
             "label": "Webhook",
             "name": "webhook",
-            "description": "Event triggered when there is a webhook coming from PandaDoc."
+            "description": "Event triggered when there is a webhook coming from Infura."
         },
         {
             "label": "Callback",
@@ -79,24 +48,9 @@
             "path": "/scripts/api.js"
         },
         {
-            "type": "listener",
-            "namespace": "webhook",
-            "path": "/listeners/webhook.js"
-        },
-        {
             "type": "flowStep",
-            "namespace": "apiCallSkeleton",
-            "path": "/flowSteps/apiCallSkeleton"
-        },
-        {
-            "type": "flowStep",
-            "namespace": "customFlow",
-            "path": "/flowSteps/customFlow"
-        },
-        {
-            "type": "uiService",
-            "namespace": "testUiService",
-            "path": "/uiServices/testUiService"
+            "namespace": "steps",
+            "path": "/flowSteps/apiCallInfura"
         }
     ]
 }
