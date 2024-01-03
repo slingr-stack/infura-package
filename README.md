@@ -1,4 +1,4 @@
-<table>
+<table class="table" style="margin-top: 10px">
     <thead>
     <tr>
         <th>Title</th>
@@ -17,7 +17,7 @@
 
 # Overview
 
-The Infura endpoint has the following features:
+The Infura package has the following features:
 
 - Authorization and generation of ApiKey tokens
 - Access to the whole REST API
@@ -34,14 +34,16 @@ The Javascript API of the infura package has three pieces:
 - **Flow steps**
 
 ## HTTP requests
-You can make `GET`,`PUT`,`PATCH`,`DELETE` requests to the [infura API](API_URL_HERE) like this:
+You can make `GET`,`PUT`,`PATCH`,`DELETE` requests to the [infura API](https://docs.infura.io/networks/ethereum/json-rpc-methods) like this:
 ```javascript
-var response = pkg.infura.api.get('/path3')
-var response = pkg.infura.api.put('/path1/:testPath', body)
-var response = pkg.infura.api.put('/path1/:testPath')
-var response = pkg.infura.api.patch('/path2?param2=' + httpOptions.query.param2 + '&param3=' + httpOptions.query.param3 + '', body)
-var response = pkg.infura.api.patch('/path2?param2=' + httpOptions.query.param2 + '&param3=' + httpOptions.query.param3 + '')
-var response = pkg.infura.api.delete('/path4')
+var response = pkg.infura.api.post({
+    path:'',
+    body:{
+        jsonrpc: "2.0",
+        method: "eth_accounts",
+        id: 1
+    }
+})
 ```
 
 Please take a look at the documentation of the [HTTP service](https://github.com/slingr-stack/http-service)
@@ -49,7 +51,7 @@ for more information about generic requests.
 
 ## Flow Step
 
-As an alternative option to using scripts, you can make use of Flows and Flow Steps specifically created for the endpoint:
+As an alternative option to using scripts, you can make use of Flows and Flow Steps specifically created for the package:
 <details>
     <summary>Click here to see the Flow Steps</summary>
 
@@ -215,7 +217,7 @@ Generic flow step for full use of the entire package and its services.
 For more information about how shortcuts or flow steps work, and how they are generated, take a look at the [slingr-helpgen tool](https://github.com/slingr-stack/slingr-helpgen).
 
 ## Dependencies
-* HTTP Service (Latest Version)
+* HTTP Service (Latest v1.3.7)
 
 ## About SLINGR
 
